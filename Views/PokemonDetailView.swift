@@ -17,7 +17,7 @@ struct PokemonDetailView: View {
         
         VStack(spacing:10){
             
-            PokemonView(pokemon:pokemon    )
+            PokemonView(pokemon:pokemon )
             
             
             Text("**ID**: \(vm.pokemonDetail?.id ?? 0 )")

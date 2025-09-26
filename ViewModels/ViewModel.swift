@@ -25,7 +25,7 @@ final class ViewModel: ObservableObject {
         self.pokemonList = pokemonManager.getPokemons()
     }
     
-    func getPokemonIndex(pokemon: Pokemon) -> Int? {
+    func getPokemonIndex(pokemon: Pokemon) -> Int {
         if let index = pokemonList.firstIndex(of: pokemon) {
             return index + 1
             
@@ -38,7 +38,7 @@ final class ViewModel: ObservableObject {
         
         self.pokemonDetail = DetailPokemon(id: 0, height: 0, weight: 0)
         
-        pokemonManager.getPokemonDetail(id: id!) {data in
+        pokemonManager.getPokemonDetail(id: id) {data in
             
             DispatchQueue.main.async {
                 self.pokemonDetail = data
